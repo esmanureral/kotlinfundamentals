@@ -1,5 +1,6 @@
 package com.esmanureral.calisma
 
+import android.app.Person
 import java.util.concurrent.TimeUnit
 
 fun main() {
@@ -81,4 +82,40 @@ fun printFinalTemperature(
  */
 
 /***************************************************************************************************/
+
+/*ŞARKI KATALOĞU
+Bir şarkının yapısını temsil edebilecek bir sınıf oluşturun. SongSınıf şu kod öğelerini içermelidir:
+
+Başlık, sanatçı, yayın yılı ve oynatma sayısı özellikleri
+Şarkının popüler olup olmadığını gösteren bir özellik. Çalma sayısı 1.000'den azsa, popüler olmayan olarak kabul edin.
+Şarkı açıklamasını şu formatta yazdıran bir yöntem:
+"[Sanatçı] tarafından icra edilen [Başlık], [yayın yılı]nda yayımlandı."
+ */
+
+fun main4(){
+    val brunoSong=Song("We dont talk about Bruno","Encanto Cast",2022,1_000_000)
+    brunoSong.printDescription()
+    println(brunoSong.isPopular)
+}
+class Song(
+    val title:String,
+    val artist:String,
+    val yearPublished:Int,
+    val playCount:Int
+){
+    val isPopular:Boolean
+        get()=playCount>=1000
+    fun printDescription(){
+        println("$title,performed by $artist,was released in $yearPublished.")
+    }
+
+}
+/*
+ŞARKI KATALOĞU ÇIKTISI:
+We Don't Talk About Bruno, performed by Encanto Cast, was released in 2022.
+true
+ */
+
+/***************************************************************************************************/
+
 
